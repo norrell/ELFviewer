@@ -1,0 +1,7 @@
+Define ELF headers according to <elf.h>
+
+Define necessary data structures
+
+Parse ELF
+
+Display in GUI
