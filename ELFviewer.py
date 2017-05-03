@@ -26,7 +26,7 @@ class ELFviewer:
 
     def run(self):
         with ELF(self._filename) as elf:
-            pass
+            print(elf.ehdr)
 
 
 USAGE = 'python3 elfviewer <filename>'
