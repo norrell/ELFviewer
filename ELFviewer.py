@@ -27,6 +27,9 @@ class ELFviewer:
     def run(self):
         with ELF(self._filename) as elf:
             print(elf.ehdr)
+            for hdr in elf.phdrs:
+                print(hdr)
+
 
 
 USAGE = 'python3 elfviewer <filename>'

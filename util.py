@@ -37,3 +37,5 @@ def mapping(filename):
 
 #constants('/home/shosh/tests/elfosabi.txt')
 #mapping('/home/shosh/tests/elfosabi.txt')
+#constants('/home/shosh/tests/ptype.txt')
+mapping('/home/shosh/tests/ptype.txt')
