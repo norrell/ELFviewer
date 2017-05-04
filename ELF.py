@@ -773,9 +773,9 @@ class ElfProgHdr:
         s += '---\n'
         s += 'Type:     ' + self.get_type() + '\n'
         padding = 8 if self._class == 'ELF32' else 16
-        s += 'Offset:   ' + '0x%0*x' % (padding, self.get_offset()) + '\n'
-        s += 'VirtAddr: ' + '0x%0*x' % (padding, self.get_vaddr()) + '\n'
-        s += 'PhysAddr: ' + '0x%0*x' % (padding, self.get_paddr()) + '\n'
+        s += 'Offset:   ' + '0x{num:0{width}x}'.format(num=self.get_offset(), width=padding) + '\n'
+        s += 'VirtAddr: ' + '0x{num:0{width}x}'.format(num=self.get_vaddr(), width=padding) + '\n'
+        s += 'PhysAddr: ' + '0x{num:0{width}x}'.format(num=self.get_paddr(), width=padding) + '\n'
         s += 'FileSiz:  ' + str(self.get_filesz()) + ' (bytes)\n'
         s += 'MemSiz:   ' + str(self.get_memsz()) + ' (bytes)\n'
         s += 'Flags:    ' + self.get_flags() + '\n'
