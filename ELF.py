@@ -771,15 +771,15 @@ class ElfProgHdr:
     def __str__(self):
         s  = 'Program header\n'
         s += '---\n'
-        s += 'Type: ' + self.get_type() + '\n'
+        s += 'Type:     ' + self.get_type() + '\n'
         padding = 8 if self._class == 'ELF32' else 16
-        s += 'Offset: ' + '0x' + '{:x}'.format(self.get_offset()).zfill(padding) + '\n'
-        s += 'VirtAddr: ' + '0x' + '{:x}'.format(self.get_vaddr()).zfill(padding) + '\n'
-        s += 'PhysAddr: ' + '0x' + '{:x}'.format(self.get_paddr()).zfill(padding) + '\n'
-        s += 'FileSiz: ' + str(self.get_filesz()) + ' (bytes)\n'
-        s += 'MemSiz: ' + str(self.get_memsz()) + ' (bytes)\n'
-        s += 'Flags: ' + self.get_flags() + '\n'
-        s += 'Align: ' + str(self.get_align()) + '\n'
+        s += 'Offset:   ' + '0x%0*x' % (padding, self.get_offset()) + '\n'
+        s += 'VirtAddr: ' + '0x%0*x' % (padding, self.get_vaddr()) + '\n'
+        s += 'PhysAddr: ' + '0x%0*x' % (padding, self.get_paddr()) + '\n'
+        s += 'FileSiz:  ' + str(self.get_filesz()) + ' (bytes)\n'
+        s += 'MemSiz:   ' + str(self.get_memsz()) + ' (bytes)\n'
+        s += 'Flags:    ' + self.get_flags() + '\n'
+        s += 'Align:    ' + str(self.get_align()) + '\n'
         return s
 
 
