@@ -2,13 +2,6 @@ from ELF import ELF
 import mmap
 import os
 import sys
-#from tkinter import *
-#from tkinter import ttk
-
-# header -> green
-# yellow
-# orange
-# blue
 
 
 class ELFviewer:
@@ -26,10 +19,14 @@ class ELFviewer:
 
     def run(self):
         with ELF(self._filename) as elf:
-            print(elf.ehdr)
-            for hdr in elf.phdrs:
-                print(hdr)
+            print(elf.header)
+            for segment in elf.segments:
+                print(segment)
+            for section in elf.sections:
+                print(section)
 
+            #for comp in elf.get_components_by_offset():
+            #    print(comp)
 
 
 USAGE = 'python3 elfviewer <filename>'
